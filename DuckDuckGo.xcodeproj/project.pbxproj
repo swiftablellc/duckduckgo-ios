@@ -169,10 +169,18 @@
 		85449EF523FDA02800512AAF /* KeyboardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85449EF423FDA02800512AAF /* KeyboardSettingsViewController.swift */; };
 		85449EFB23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85449EFA23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift */; };
 		85449EFD23FDA71F00512AAF /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85449EFC23FDA71F00512AAF /* KeyboardSettings.swift */; };
+		8544C3752506923C00A0FE73 /* FireAnimationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C3742506923C00A0FE73 /* FireAnimationSettingsViewController.swift */; };
 		85482D8D2462DCD100EDEDD1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85482D8C2462DCD100EDEDD1 /* ActionViewController.swift */; };
 		85482D902462DCD100EDEDD1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85482D8E2462DCD100EDEDD1 /* MainInterface.storyboard */; };
 		85482D942462DCD100EDEDD1 /* OpenAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85482D882462DCD100EDEDD1 /* OpenAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		85482D992462F1C600EDEDD1 /* ActionIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85482D982462F1C600EDEDD1 /* ActionIcons.xcassets */; };
+		854D405125067330005EE172 /* 01_Fire_Match_Swirl.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D405025067330005EE172 /* 01_Fire_Match_Swirl.json */; };
+		854D405325067353005EE172 /* 01_Fire_Lightning_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D405225067353005EE172 /* 01_Fire_Lightning_2.json */; };
+		854D40552506756B005EE172 /* 02_Water_Hero_Droplet.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D40542506756B005EE172 /* 02_Water_Hero_Droplet.json */; };
+		854D405725067581005EE172 /* 02_Water_Wash.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D405625067581005EE172 /* 02_Water_Wash.json */; };
+		854D40592506761B005EE172 /* 03_Abstract_Hero_Squeegee.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D40582506761B005EE172 /* 03_Abstract_Hero_Squeegee.json */; };
+		854D405B2506763B005EE172 /* 03_Abstract_Kaleidoscope_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D405A2506763B005EE172 /* 03_Abstract_Kaleidoscope_1.json */; };
+		854D405D250676A2005EE172 /* 03_Abstract_Kaleidoscope_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D405C250676A2005EE172 /* 03_Abstract_Kaleidoscope_3.json */; };
 		85514FFD2372DA0100DBC528 /* ios13-home-row.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 85514FFC2372DA0000DBC528 /* ios13-home-row.mp4 */; };
 		85519125247468580010FDD0 /* TrackerRadarIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85519124247468580010FDD0 /* TrackerRadarIntegrationTests.swift */; };
 		8551912724746EDC0010FDD0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551912624746EDC0010FDD0 /* SnapshotHelper.swift */; };
@@ -818,11 +826,19 @@
 		85449EFA23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPropertyWrapper.swift; sourceTree = "<group>"; };
 		85449EFC23FDA71F00512AAF /* KeyboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettings.swift; sourceTree = "<group>"; };
 		85449F0023FEAF3000512AAF /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		8544C3742506923C00A0FE73 /* FireAnimationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimationSettingsViewController.swift; sourceTree = "<group>"; };
 		85482D882462DCD100EDEDD1 /* OpenAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		85482D8C2462DCD100EDEDD1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		85482D8F2462DCD100EDEDD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		85482D912462DCD100EDEDD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85482D982462F1C600EDEDD1 /* ActionIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ActionIcons.xcassets; sourceTree = "<group>"; };
+		854D405025067330005EE172 /* 01_Fire_Match_Swirl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 01_Fire_Match_Swirl.json; sourceTree = "<group>"; };
+		854D405225067353005EE172 /* 01_Fire_Lightning_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 01_Fire_Lightning_2.json; sourceTree = "<group>"; };
+		854D40542506756B005EE172 /* 02_Water_Hero_Droplet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 02_Water_Hero_Droplet.json; sourceTree = "<group>"; };
+		854D405625067581005EE172 /* 02_Water_Wash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 02_Water_Wash.json; sourceTree = "<group>"; };
+		854D40582506761B005EE172 /* 03_Abstract_Hero_Squeegee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 03_Abstract_Hero_Squeegee.json; sourceTree = "<group>"; };
+		854D405A2506763B005EE172 /* 03_Abstract_Kaleidoscope_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 03_Abstract_Kaleidoscope_1.json; sourceTree = "<group>"; };
+		854D405C250676A2005EE172 /* 03_Abstract_Kaleidoscope_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 03_Abstract_Kaleidoscope_3.json; sourceTree = "<group>"; };
 		85514FFC2372DA0000DBC528 /* ios13-home-row.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ios13-home-row.mp4"; sourceTree = "<group>"; };
 		85519124247468580010FDD0 /* TrackerRadarIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerRadarIntegrationTests.swift; sourceTree = "<group>"; };
 		8551912624746EDC0010FDD0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -1813,8 +1829,16 @@
 		859872221F5743AF00041CB8 /* FireAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				854D405225067353005EE172 /* 01_Fire_Lightning_2.json */,
+				854D405025067330005EE172 /* 01_Fire_Match_Swirl.json */,
+				854D40542506756B005EE172 /* 02_Water_Hero_Droplet.json */,
+				854D405625067581005EE172 /* 02_Water_Wash.json */,
+				854D40582506761B005EE172 /* 03_Abstract_Hero_Squeegee.json */,
+				854D405A2506763B005EE172 /* 03_Abstract_Kaleidoscope_1.json */,
+				854D405C250676A2005EE172 /* 03_Abstract_Kaleidoscope_3.json */,
 				F164DDBE1F2A509200010DD2 /* FireAnimation.swift */,
 				859872231F5743D800041CB8 /* FireAnimation.xib */,
+				8544C3742506923C00A0FE73 /* FireAnimationSettingsViewController.swift */,
 			);
 			name = FireAnimation;
 			sourceTree = "<group>";
@@ -3280,6 +3304,7 @@
 			files = (
 				98FD3E2823A3010C005ABD42 /* ios12-home-row.mp4 in Resources */,
 				F1EEAC541EAFC783006128D9 /* proximanova-bold.otf in Resources */,
+				854D405325067353005EE172 /* 01_Fire_Lightning_2.json in Resources */,
 				AA4D6A8D23DE49A5007E8790 /* AppIconBlack40x40@3x.png in Resources */,
 				AA4D6ACC23DE4D27007E8790 /* AppIconPurple60x60@2x.png in Resources */,
 				F1EEAC551EAFC783006128D9 /* proximanova-light.otf in Resources */,
@@ -3296,12 +3321,14 @@
 				AA4D6AE323DE4D33007E8790 /* AppIconGreen60x60@2x.png in Resources */,
 				85371D242121B9D500920548 /* new_tab.json in Resources */,
 				F1A169F31F3B2A8A00BE3E3B /* FlamesAnimation.xcassets in Resources */,
+				854D405D250676A2005EE172 /* 03_Abstract_Kaleidoscope_3.json in Resources */,
 				85DFEDF724CB1CAB00973FE7 /* ShareSheet.xcassets in Resources */,
 				98DA6B3322243CC3006EA9EB /* Feedback.xcassets in Resources */,
 				AA4D6ABD23DE4D15007E8790 /* AppIconYellow60x60@2x.png in Resources */,
 				AA4D6AD423DE4D27007E8790 /* AppIconPurple40x40@3x.png in Resources */,
 				AA4D6AD123DE4D27007E8790 /* AppIconPurple40x40@2x.png in Resources */,
 				AAF2E28B23E049DF00962AF8 /* AppIconYellow83.5x83.5@2x.png in Resources */,
+				854D40592506761B005EE172 /* 03_Abstract_Hero_Squeegee.json in Resources */,
 				85514FFD2372DA0100DBC528 /* ios13-home-row.mp4 in Resources */,
 				984147AB24F025F700362052 /* Autocomplete.storyboard in Resources */,
 				AA4D6A9423DE49A5007E8790 /* AppIconBlack29x29@2x.png in Resources */,
@@ -3351,11 +3378,13 @@
 				AA4D6AF623DF0312007E8790 /* AppIconRed60x60@3x.png in Resources */,
 				AA4D6AE423DE4D33007E8790 /* AppIconGreen40x40@3x.png in Resources */,
 				AAF2E28323E0495E00962AF8 /* AppIconBlue83.5x83.5@2x.png in Resources */,
+				854D40552506756B005EE172 /* 02_Water_Hero_Droplet.json in Resources */,
 				AA4D6AE223DE4D33007E8790 /* AppIconGreen40x40@2x.png in Resources */,
 				85EE7F55224667DD000FE757 /* WebContainer.storyboard in Resources */,
 				984E291B22CD68D600EE7154 /* PrivacyProtectionHomeCell.xib in Resources */,
 				0A6CC0EF23904D5400E4F627 /* Settings.bundle in Resources */,
 				85A9C37920E0E00C00073340 /* HomeRow.xcassets in Resources */,
+				854D405725067581005EE172 /* 02_Water_Wash.json in Resources */,
 				984147C624F026D100362052 /* SettingsTutorials.storyboard in Resources */,
 				AA4D6AE623DE4D33007E8790 /* AppIconGreen60x60@3x.png in Resources */,
 				8565419C224D304D00DF1FB2 /* proximanova-extrabold.otf in Resources */,
@@ -3363,8 +3392,10 @@
 				F143C2B21E49D78C00CFDE3A /* Assets.xcassets in Resources */,
 				AA4D6AA323DE4CC4007E8790 /* AppIconBlue40x40@3x.png in Resources */,
 				AAF2E28123E0495400962AF8 /* AppIconBlack83.5x83.5@2x.png in Resources */,
+				854D405B2506763B005EE172 /* 03_Abstract_Kaleidoscope_1.json in Resources */,
 				AA4D6ABF23DE4D15007E8790 /* AppIconYellow40x40@3x.png in Resources */,
 				AA4D6A8F23DE49A5007E8790 /* AppIconBlack29x29@3x.png in Resources */,
+				854D405125067330005EE172 /* 01_Fire_Match_Swirl.json in Resources */,
 				AA4D6AA523DE4CC4007E8790 /* AppIconBlue29x29@3x.png in Resources */,
 				AA4D6ACF23DE4D27007E8790 /* AppIconPurple76x76@2x.png in Resources */,
 				98EF177D21837E35006750C1 /* new_tab_dark.json in Resources */,
@@ -3649,6 +3680,7 @@
 				85BDC310243359040053DB07 /* FindInPageUserScript.swift in Sources */,
 				F1DE78581E5CAE350058895A /* TabViewGridCell.swift in Sources */,
 				984D035824ACCC6F0066CFB8 /* TabViewListCell.swift in Sources */,
+				8544C3752506923C00A0FE73 /* FireAnimationSettingsViewController.swift in Sources */,
 				AA3D854923DA1DFB00788410 /* AppIcon.swift in Sources */,
 				857D1DC9223A9E7D00833940 /* MockAppSettings.swift in Sources */,
 				F17922D71E717AF0006E3D97 /* AutocompleteParser.swift in Sources */,

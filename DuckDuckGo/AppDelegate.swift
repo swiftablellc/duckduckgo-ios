@@ -56,6 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
 
+        DispatchQueue.global(qos: .userInitiated).async {
+            FireAnimation.preload()
+        }
+
         _ = UserAgentManager.shared
 
         DispatchQueue.global(qos: .background).async {

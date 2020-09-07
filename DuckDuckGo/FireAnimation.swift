@@ -18,6 +18,22 @@
 //
 
 import UIKit
+import Lottie
+import Core
+
+class FireButtonAnimationSettings {
+
+    @UserDefaultsWrapper(key: .animationType, defaultValue: 0)
+    var animationType: Int {
+        didSet {
+            animationCycle = 0
+        }
+    }
+
+    @UserDefaultsWrapper(key: .animationCycle, defaultValue: 0)
+    var animationCycle: Int
+
+}
 
 extension FireAnimation: NibLoading {}
 
@@ -32,6 +48,54 @@ class FireAnimation: UIView {
         static let endAnimationDuration = 0.2
     }
 
+    enum AnimName: String, CaseIterable {
+
+        case fireLightning = "01_Fire_Lightning_2"
+        case fireMatch = "01_Fire_Match_Swirl"
+        case waterHeroDroplet = "02_Water_Hero_Droplet"
+        case waterWash = "02_Water_Wash"
+        case abstractHeroSqueegee = "03_Abstract_Hero_Squeegee"
+        case abstractKaleidoscope1 = "03_Abstract_Kaleidoscope_1"
+        case abstractKaleidoscope3 = "03_Abstract_Kaleidoscope_3"
+
+    }
+
+    struct AnimSpec {
+
+        static let fireLightning = AnimSpec(name: .fireLightning, transition: 0.40)
+        static let fireMatch = AnimSpec(name: .fireMatch, transition: 0.61)
+
+        static let waterHeroDroplet = AnimSpec(name: .waterHeroDroplet, transition: 0.5)
+        static let waterWash = AnimSpec(name: .waterWash, transition: 0.3)
+
+        static let abstractHeroSqueegee = AnimSpec(name: .abstractHeroSqueegee, transition: 0.5)
+        static let abstractKaleidoscope1 = AnimSpec(name: .abstractKaleidoscope1, transition: 0.5)
+        static let abstractKaleidoscope3 = AnimSpec(name: .abstractKaleidoscope3, transition: 0.5)
+
+        let name: AnimName
+        let transition: CGFloat
+
+    }
+
+    static let anims: [[AnimSpec]] = [
+        [ .fireLightning, .fireLightning, .fireLightning, .fireMatch],
+        [ .waterHeroDroplet, .waterHeroDroplet, .waterHeroDroplet, .waterWash ],
+        [ .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractKaleidoscope1,
+            .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractKaleidoscope3 ]
+    ]
+
+    static var animCache: [AnimName: Any] = [:]
+
+    static func preload() {
+        print("***", #function, "IN")
+        AnimName.allCases.forEach {
+            let anim = Animation.named($0.rawValue)
+            animCache[$0] = anim
+            print("***", #function, $0.rawValue, anim!.endFrame)
+        }
+        print("***", #function, "OUT")
+    }
+
     static func animate(completion: @escaping () -> Void) {
 
         guard let window = UIApplication.shared.keyWindow else {
@@ -39,26 +103,29 @@ class FireAnimation: UIView {
             return
         }
 
-        let anim = FireAnimation.load(nibName: "FireAnimation")
-        anim.image.animationImages = animatedImages
-        anim.image.contentMode = window.frame.width > anim.image.animationImages![0].size.width ? .scaleAspectFill : .center
-        anim.image.startAnimating()
+        let animView = AnimationView()
+        animView.frame = window.frame
+        animView.contentMode = .scaleAspectFill
+        window.addSubview(animView)
 
-        anim.frame = window.frame
-        anim.transform.ty = anim.frame.size.height
-        window.addSubview(anim)
+        let settings = FireButtonAnimationSettings()
+        let animCycle = anims[settings.animationType]
+        if settings.animationCycle >= animCycle.count {
+            settings.animationCycle = 0
+        }
+        let animSpec = animCycle[settings.animationCycle]
+        settings.animationCycle += 1
 
-        UIView.animate(withDuration: Constants.animationDuration, delay: 0, options: .curveEaseOut, animations: {
-            anim.transform.ty = -(anim.offset.constant * 2)
-        }, completion: { _ in
+        let cachedData = animCache[animSpec.name] as? Animation ?? Animation.named(animSpec.name.rawValue)
+
+        animView.animation = cachedData
+
+        animView.play(toProgress: animSpec.transition) { _ in
             completion()
-        })
-
-        UIView.animate(withDuration: Constants.endAnimationDuration, delay: Constants.endDelayDuration, options: .curveEaseOut, animations: {
-            anim.alpha = 0
-        }, completion: { _ in
-            anim.removeFromSuperview()
-        })
+            animView.play(fromProgress: animSpec.transition, toProgress: 1.0) { _ in
+                animView.removeFromSuperview()
+            }
+        }
 
     }
 

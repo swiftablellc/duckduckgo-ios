@@ -25,6 +25,7 @@ import Device
 class SettingsViewController: UITableViewController {
 
     @IBOutlet var margins: [NSLayoutConstraint]!
+    @IBOutlet weak var fireButtonAnimationText: UILabel!
     @IBOutlet weak var themeAccessoryText: UILabel!
     @IBOutlet weak var appIconCell: UITableViewCell!
     @IBOutlet weak var appIconImageView: UIImageView!
@@ -69,6 +70,7 @@ class SettingsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        configureFireButtonAnimationText()
         configureAutoClearCellAccessory()
         configureRememberLogins()
         configureIconViews()
@@ -110,6 +112,11 @@ class SettingsViewController: UITableViewController {
                 segue.destination.modalPresentationStyle = .formSheet
             }
         }
+    }
+
+    private func configureFireButtonAnimationText() {
+        let settings = FireButtonAnimationSettings()
+        fireButtonAnimationText.text = FireAnimationSettingsViewController.model[settings.animationType]
     }
 
     private func configureMargins() {

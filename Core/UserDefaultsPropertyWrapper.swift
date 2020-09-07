@@ -52,6 +52,9 @@ public struct UserDefaultsWrapper<T> {
         case faviconsNeedMigration = "com.duckduckgo.ios.favicons.needsMigration"
 
         case legacyCovidInfo = "com.duckduckgo.ios.home.covidInfo"
+
+        case animationType = "com.duckduckgo.ios.firebutton.animation.type"
+        case animationCycle = "com.duckduckgo.ios.firebutton.animation.cycle"
     }
 
     private let key: Key
