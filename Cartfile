@@ -13,7 +13,7 @@ github "duckduckgo/CommonCrypto" ~> 1.1.0
 
 github "duckduckgo/swifter" "stable"
 
-github "duckduckgo/lottie-ios" "tags/2.5.0"
+github "airbnb/lottie-ios" "tags/3.1.8"
 
 github "duckduckgo/PunycodeSwift" "master"
 
