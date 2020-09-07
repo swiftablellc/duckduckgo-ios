@@ -124,6 +124,7 @@ class FireAnimation: UIView {
             completion()
             animView.play(fromProgress: animSpec.transition, toProgress: 1.0) { _ in
                 animView.removeFromSuperview()
+                window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
             }
         }
 

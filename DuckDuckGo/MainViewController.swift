@@ -1254,8 +1254,6 @@ extension MainViewController: AutoClearWorker {
                 }
             }
         }
-        let window = UIApplication.shared.keyWindow
-        window?.showBottomToast(UserText.actionForgetAllDone, duration: 1)
     }
     
 }
