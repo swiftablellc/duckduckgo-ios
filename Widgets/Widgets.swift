@@ -13,9 +13,19 @@ import Kingfisher
 
 struct Favorite {
 
+    static let ddgDomain = "duckduckgo.com"
+
     let url: URL
     let domain: String
     let favicon: UIImage?
+
+    var isDuckDuckGo: Bool {
+        return domain == Self.ddgDomain
+    }
+
+    var needsColorBackground: Bool {
+        return favicon == nil && domain != Self.ddgDomain
+    }
 
 }
 
@@ -32,6 +42,7 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<FavoritesEntry>) -> Void) {
+        NSLog("getTimeline for %@", String(describing: context.family))
         let timeline = Timeline(entries: [createEntry(in: context)], policy: .atEnd)
         completion(timeline)
     }
