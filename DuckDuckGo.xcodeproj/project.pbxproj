@@ -170,6 +170,8 @@
 		85449EFB23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85449EFA23FDA0BC00512AAF /* UserDefaultsPropertyWrapper.swift */; };
 		85449EFD23FDA71F00512AAF /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85449EFC23FDA71F00512AAF /* KeyboardSettings.swift */; };
 		8544C3752506923C00A0FE73 /* FireAnimationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C3742506923C00A0FE73 /* FireAnimationSettingsViewController.swift */; };
+		8544C3772507EC4B00A0FE73 /* 01_Fire_Hero_Rising_Flame.json in Resources */ = {isa = PBXBuildFile; fileRef = 8544C3762507EC4B00A0FE73 /* 01_Fire_Hero_Rising_Flame.json */; };
+		8544C3792507ECC700A0FE73 /* 02_Water_Swirl.json in Resources */ = {isa = PBXBuildFile; fileRef = 8544C3782507ECC700A0FE73 /* 02_Water_Swirl.json */; };
 		85482D8D2462DCD100EDEDD1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85482D8C2462DCD100EDEDD1 /* ActionViewController.swift */; };
 		85482D902462DCD100EDEDD1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85482D8E2462DCD100EDEDD1 /* MainInterface.storyboard */; };
 		85482D942462DCD100EDEDD1 /* OpenAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85482D882462DCD100EDEDD1 /* OpenAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -827,6 +829,8 @@
 		85449EFC23FDA71F00512AAF /* KeyboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettings.swift; sourceTree = "<group>"; };
 		85449F0023FEAF3000512AAF /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		8544C3742506923C00A0FE73 /* FireAnimationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimationSettingsViewController.swift; sourceTree = "<group>"; };
+		8544C3762507EC4B00A0FE73 /* 01_Fire_Hero_Rising_Flame.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 01_Fire_Hero_Rising_Flame.json; sourceTree = "<group>"; };
+		8544C3782507ECC700A0FE73 /* 02_Water_Swirl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 02_Water_Swirl.json; sourceTree = "<group>"; };
 		85482D882462DCD100EDEDD1 /* OpenAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		85482D8C2462DCD100EDEDD1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		85482D8F2462DCD100EDEDD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -1829,10 +1833,12 @@
 		859872221F5743AF00041CB8 /* FireAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				8544C3762507EC4B00A0FE73 /* 01_Fire_Hero_Rising_Flame.json */,
 				854D405225067353005EE172 /* 01_Fire_Lightning_2.json */,
 				854D405025067330005EE172 /* 01_Fire_Match_Swirl.json */,
 				854D40542506756B005EE172 /* 02_Water_Hero_Droplet.json */,
 				854D405625067581005EE172 /* 02_Water_Wash.json */,
+				8544C3782507ECC700A0FE73 /* 02_Water_Swirl.json */,
 				854D40582506761B005EE172 /* 03_Abstract_Hero_Squeegee.json */,
 				854D405A2506763B005EE172 /* 03_Abstract_Kaleidoscope_1.json */,
 				854D405C250676A2005EE172 /* 03_Abstract_Kaleidoscope_3.json */,
@@ -3314,6 +3320,7 @@
 				AA4D6AB823DE4D15007E8790 /* AppIconYellow29x29@2x.png in Resources */,
 				984147C024F026A300362052 /* Tab.storyboard in Resources */,
 				AA4D6AE123DE4D33007E8790 /* AppIconGreen76x76@2x.png in Resources */,
+				8544C3772507EC4B00A0FE73 /* 01_Fire_Hero_Rising_Flame.json in Resources */,
 				AA4D6A9123DE49A5007E8790 /* AppIconBlack60x60@3x.png in Resources */,
 				AA4D6A8E23DE49A5007E8790 /* AppIconBlack60x60@2x.png in Resources */,
 				AA4D6AC023DE4D15007E8790 /* AppIconYellow76x76@2x.png in Resources */,
@@ -3322,6 +3329,7 @@
 				85371D242121B9D500920548 /* new_tab.json in Resources */,
 				F1A169F31F3B2A8A00BE3E3B /* FlamesAnimation.xcassets in Resources */,
 				854D405D250676A2005EE172 /* 03_Abstract_Kaleidoscope_3.json in Resources */,
+				8544C3792507ECC700A0FE73 /* 02_Water_Swirl.json in Resources */,
 				85DFEDF724CB1CAB00973FE7 /* ShareSheet.xcassets in Resources */,
 				98DA6B3322243CC3006EA9EB /* Feedback.xcassets in Resources */,
 				AA4D6ABD23DE4D15007E8790 /* AppIconYellow60x60@2x.png in Resources */,

@@ -50,8 +50,10 @@ class FireAnimation: UIView {
 
     enum AnimName: String, CaseIterable {
 
+        case fireRisingFlame = "01_Fire_Hero_Rising_Flame"
         case fireLightning = "01_Fire_Lightning_2"
         case fireMatch = "01_Fire_Match_Swirl"
+        case waterSwirl = "02_Water_Swirl"
         case waterHeroDroplet = "02_Water_Hero_Droplet"
         case waterWash = "02_Water_Wash"
         case abstractHeroSqueegee = "03_Abstract_Hero_Squeegee"
@@ -62,9 +64,11 @@ class FireAnimation: UIView {
 
     struct AnimSpec {
 
+        static let fireRisingFlame = AnimSpec(name: .fireRisingFlame, transition: 0.35)
         static let fireLightning = AnimSpec(name: .fireLightning, transition: 0.40)
         static let fireMatch = AnimSpec(name: .fireMatch, transition: 0.61)
 
+        static let waterSwirl = AnimSpec(name: .waterSwirl, transition: 0.5)
         static let waterHeroDroplet = AnimSpec(name: .waterHeroDroplet, transition: 0.5)
         static let waterWash = AnimSpec(name: .waterWash, transition: 0.3)
 
@@ -78,10 +82,10 @@ class FireAnimation: UIView {
     }
 
     static let anims: [[AnimSpec]] = [
-        [ .fireLightning, .fireLightning, .fireLightning, .fireMatch],
-        [ .waterHeroDroplet, .waterHeroDroplet, .waterHeroDroplet, .waterWash ],
+        [ .fireRisingFlame, .fireRisingFlame, .fireRisingFlame, .fireLightning, .fireRisingFlame, .fireRisingFlame, .fireMatch],
+        [ .waterSwirl, .waterSwirl, .waterSwirl, .waterHeroDroplet, .waterSwirl, .waterSwirl, .waterWash ],
         [ .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractKaleidoscope1,
-            .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractKaleidoscope3 ]
+                                 .abstractHeroSqueegee, .abstractHeroSqueegee, .abstractKaleidoscope3 ]
     ]
 
     static var animCache: [AnimName: Any] = [:]
@@ -120,13 +124,25 @@ class FireAnimation: UIView {
 
         animView.animation = cachedData
 
+// Accurate method, maybe causes a delay?
         animView.play(toProgress: animSpec.transition) { _ in
-            completion()
-            animView.play(fromProgress: animSpec.transition, toProgress: 1.0) { _ in
+            animView.play(fromProgress: animView.currentProgress, toProgress: 1.0) { _ in
                 animView.removeFromSuperview()
                 window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
             }
-        }
+            completion()
+       }
+
+// Alt: inaccurate method
+//        animView.play() { _ in
+//            animView.removeFromSuperview()
+//            window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
+//        }
+//
+//        let delay = Double(CGFloat(animView.animation?.duration ?? 0) * animSpec.transition)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+//            completion()
+//        }
 
     }
 
