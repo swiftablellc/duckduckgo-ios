@@ -48,7 +48,6 @@ class TabSwitcherButton: UIView {
 
     var workItem: DispatchWorkItem?
 
-    // let anim = LOTAnimationView(name: "new_tab")
     let anim = AnimationView(name: "new_tab")
     let label = UILabel()
     let pointerView: UIView = UIView(frame: CGRect(x: 0,
