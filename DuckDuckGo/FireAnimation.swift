@@ -125,26 +125,26 @@ class FireAnimation: UIView {
         animView.animation = cachedData
 
 // Accurate method, maybe causes a delay?
-        animView.play(toProgress: animSpec.transition) { _ in
-            animView.play(fromProgress: animView.currentProgress, toProgress: 1.0) { _ in
-                animView.removeFromSuperview()
-                window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
-            }
-            completion()
-       }
+//        animView.play(toProgress: animSpec.transition) { _ in
+//            animView.play(fromProgress: animView.currentProgress, toProgress: 1.0) { _ in
+//                animView.removeFromSuperview()
+//                window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
+//            }
+//            completion()
+//       }
 
 // Alt: inaccurate method
-//        animView.play() { _ in
-//            animView.removeFromSuperview()
-//            window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
-//        }
-//
-//        let delay = Double(CGFloat(animView.animation?.duration ?? 0) * animSpec.transition)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-//            completion()
-//        }
+        let delay = Double(CGFloat(animView.animation?.duration ?? 0) * animSpec.transition)
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            completion()
+        }
 
-    }
+        animView.play() { _ in
+            animView.removeFromSuperview()
+            window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
+        }
+
+   }
 
     private static var animatedImages: [UIImage] {
         var images = [UIImage]()
