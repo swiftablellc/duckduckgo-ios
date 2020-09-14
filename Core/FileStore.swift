@@ -66,7 +66,8 @@ public class FileStore {
 
     func persistenceLocation(forConfiguration config: ContentBlockerRequest.Configuration) -> URL {
         let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)
-        return path!.appendingPathComponent(config.rawValue)
+            ?? FileManager.default.temporaryDirectory
+        return path.appendingPathComponent(config.rawValue)
     }
 
 }
