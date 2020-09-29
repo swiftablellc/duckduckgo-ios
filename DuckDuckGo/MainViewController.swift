@@ -411,13 +411,13 @@ class MainViewController: UIViewController {
         Pixel.fire(pixel: .forgetAllPressedBrowsing)
 
         let alert = ForgetDataAlert.buildAlert(forgetTabsAndDataHandler: { [weak self] in
-            self?.forgetAllWithAnimation {}
+            self?.forgetAllWithAnimation()
         })
         self.present(controller: alert, fromView: self.toolbar)
     }
     
     func onQuickFirePressed() {
-        self.forgetAllWithAnimation {}
+        self.forgetAllWithAnimation()
         self.dismiss(animated: true)
         if KeyboardSettings().onAppLaunch {
             self.enterSearch()

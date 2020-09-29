@@ -95,7 +95,7 @@ class FireAnimation: UIView {
         AnimName.allCases.forEach {
             let anim = Animation.named($0.rawValue)
             animCache[$0] = anim
-            print("***", #function, $0.rawValue, anim!.endFrame)
+            print("***", #function, $0.rawValue, anim!.endFrame, anim?.framerate ?? 0)
         }
         print("***", #function, "OUT")
     }
@@ -110,6 +110,7 @@ class FireAnimation: UIView {
         let animView = AnimationView()
         animView.frame = window.frame
         animView.contentMode = .scaleAspectFill
+        animView.respectAnimationFrameRate = true
         window.addSubview(animView)
 
         let settings = FireButtonAnimationSettings()
@@ -142,8 +143,8 @@ class FireAnimation: UIView {
         animView.play() { _ in
             animView.removeFromSuperview()
             window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
+            // completion()
         }
-
    }
 
     private static var animatedImages: [UIImage] {

@@ -164,7 +164,9 @@ public class Favicons {
     }
  
     public func clearCache(_ cacheType: CacheType) {
-        Constants.caches[cacheType]?.clearDiskCache()
+        DispatchQueue.global(qos: .background).async {
+            Constants.caches[cacheType]?.clearDiskCache()
+        }
     }
 
     private func removeFavicon(forDomain domain: String, fromCache cacheType: CacheType) {
