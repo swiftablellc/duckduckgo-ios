@@ -107,6 +107,14 @@ class FireAnimation: UIView {
             return
         }
 
+        guard let snapshot = window.snapshotView(afterScreenUpdates: false) else {
+            completion()
+            return
+        }
+
+        window.addSubview(snapshot)
+        completion()
+
         let animView = AnimationView()
         animView.frame = window.frame
         animView.contentMode = .scaleAspectFill
@@ -125,25 +133,14 @@ class FireAnimation: UIView {
 
         animView.animation = cachedData
 
-// Accurate method, maybe causes a delay?
-//        animView.play(toProgress: animSpec.transition) { _ in
-//            animView.play(fromProgress: animView.currentProgress, toProgress: 1.0) { _ in
-//                animView.removeFromSuperview()
-//                window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
-//            }
-//            completion()
-//       }
-
-// Alt: inaccurate method
         let delay = Double(CGFloat(animView.animation?.duration ?? 0) * animSpec.transition)
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            completion()
+            snapshot.removeFromSuperview()
         }
 
         animView.play() { _ in
             animView.removeFromSuperview()
             window.showBottomToast(UserText.actionForgetAllDone, duration: 1)
-            // completion()
         }
    }
 
