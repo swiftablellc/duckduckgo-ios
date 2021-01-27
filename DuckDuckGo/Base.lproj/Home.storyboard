@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,7 +17,7 @@
         <!--Home View Controller-->
         <scene sceneID="iIP-Az-GLU">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LJ1-RN-ckE" customClass="HomeViewController" customModule="DuckDuckGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LJ1-RN-ckE" customClass="HomeViewController" customModule="Jabberwocky" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hb5-8e-q7S"/>
                         <viewControllerLayoutGuide type="bottom" id="ct2-28-dU6"/>
@@ -25,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H74-G9-0WZ" customClass="HomeCollectionView" customModule="DuckDuckGo" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H74-G9-0WZ" customClass="HomeCollectionView" customModule="Jabberwocky" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -46,7 +47,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="centeredSearch" id="54m-Mn-tex" customClass="CenteredSearchHomeCell" customModule="DuckDuckGo" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="centeredSearch" id="54m-Mn-tex" customClass="CenteredSearchHomeCell" customModule="Jabberwocky" customModuleProvider="target">
                                         <rect key="frame" x="60" y="0.0" width="342" height="287"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -65,12 +66,12 @@
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextDuckDuckGo" translatesAutoresizingMaskIntoConstraints="NO" id="0q0-nN-Ola">
                                                             <rect key="frame" x="0.0" y="108" width="162" height="21"/>
-                                                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="tintColor" systemColor="systemBlueColor"/>
                                                         </imageView>
                                                     </subviews>
                                                     <variation key="heightClass=compact" axis="horizontal"/>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jf-KE-oXj" customClass="RoundedRectangleView" customModule="DuckDuckGo" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jf-KE-oXj" customClass="RoundedRectangleView" customModule="Core">
                                                     <rect key="frame" x="0.0" y="239" width="342" height="48"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SuggestLoupe" translatesAutoresizingMaskIntoConstraints="NO" id="Cfx-pb-o8i">
@@ -82,7 +83,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search or enter address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73D-OT-n1K">
-                                                            <rect key="frame" x="50" y="16" width="171" height="16"/>
+                                                            <rect key="frame" x="49.999999999999986" y="14.666666666666659" width="171.66666666666663" height="18.666666666666671"/>
                                                             <accessibility key="accessibilityConfiguration">
                                                                 <bool key="isElement" value="NO"/>
                                                             </accessibility>
@@ -118,6 +119,7 @@
                                                 </view>
                                             </subviews>
                                         </view>
+                                        <viewLayoutGuide key="safeArea" id="3i0-li-iSv"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="7Jf-KE-oXj" firstAttribute="leading" secondItem="3i0-li-iSv" secondAttribute="leading" id="2Ia-p2-6HX"/>
@@ -126,7 +128,6 @@
                                             <constraint firstItem="3i0-li-iSv" firstAttribute="trailing" secondItem="7Jf-KE-oXj" secondAttribute="trailing" id="niW-Cm-waP"/>
                                             <constraint firstItem="7Jf-KE-oXj" firstAttribute="top" secondItem="eQ8-iA-i1e" secondAttribute="bottom" constant="32" id="pw7-Bg-mC2"/>
                                         </constraints>
-                                        <viewLayoutGuide key="safeArea" id="3i0-li-iSv"/>
                                         <size key="customSize" width="342" height="287"/>
                                         <connections>
                                             <outlet property="imageView" destination="39W-ag-iVs" id="ob1-89-hb0"/>
@@ -181,6 +182,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ijV-Vn-w9w"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3ms-eB-DjL" firstAttribute="width" secondItem="klK-ZJ-wmA" secondAttribute="width" priority="750" id="12Q-iD-RrD"/>
@@ -198,7 +200,6 @@
                             <constraint firstItem="ijV-Vn-w9w" firstAttribute="bottom" secondItem="5Rf-oV-2W5" secondAttribute="bottom" id="iP8-nF-jOV"/>
                             <constraint firstItem="H74-G9-0WZ" firstAttribute="centerY" secondItem="ijV-Vn-w9w" secondAttribute="centerY" id="vdx-nG-nrB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ijV-Vn-w9w"/>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="BjB-Gh-zsj"/>
@@ -239,5 +240,8 @@
         <image name="Settings" width="24" height="24"/>
         <image name="SuggestLoupe" width="24" height="24"/>
         <image name="TextDuckDuckGo" width="162" height="21"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
