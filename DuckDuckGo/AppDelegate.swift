@@ -25,6 +25,10 @@ import Kingfisher
 import WidgetKit
 import BackgroundTasks
 
+import AVFoundation
+import JabberwockyARKitEngine
+import JabberwockyHTKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -96,6 +100,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Task handler registration needs to happen before the end of `didFinishLaunching`, otherwise submitting a task can throw an exception.
             // Having both in `didBecomeActive` can sometimes cause the exception when running on a physical device, so registration happens here.
             AppConfigurationFetch.registerBackgroundRefreshTaskHandler()
+        }
+        
+        AVCaptureDevice.requestAccess(for: .video) { (granted) in
+            if (granted) {
+                // Configure the default HTFeatures and enable Head Tracking
+                DispatchQueue.main.async {
+                    HeadTracking.configure(withEngine: ARKitHTEngine.self)
+                    HeadTracking.shared.enable()
+                }
+            } else {
+                NSLog("Head Tracking requires camera access.")
+            }
         }
         
         appIsLaunching = true
